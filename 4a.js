@@ -1,6 +1,23 @@
+
+
 let listaJuegos = document.getElementById("listaJuegos")
 
-fetch('https://jsonplaceholder.typicode.com/todos/1')
+const getGames = async () => { 
+    const response = await fetch ('https://jsonplaceholder.typicode.com/posts')
+    const data = await response.json()
+
+    let juegos = data.results
+    juegos.forEach(juego => {
+        let li = document.createElement("li")
+        li.innerHTML =
+        <h5>${juego.title}</h5>
+
+        listaJuegos.append(li)
+})
+
+getGames ();
+
+/*fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => response.json())
     .then(response => {
         response.forEach(juego => {
@@ -10,7 +27,7 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
 
             listaJuegos.append(li)
         })
-    }
+    })*/
 
 const contenedorVideojuegos = document.querySelector('#contenedorVideojuegos');
 console.log(contenedorVideojuegos);
@@ -41,4 +58,4 @@ const cart = JSON.parse(localStorage.getItem("cart")) || [];
 function agregar (id) {
     let encontrar = videojuegos.find (prod => prod.id === parseInt (id))
     cart.push (encontrar)
-}
+}}
