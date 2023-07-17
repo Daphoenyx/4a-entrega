@@ -8,11 +8,11 @@ const getGames = async () => {
 
     let juegos = data.results
     juegos.forEach(juego => {
-        let li = document.createElement("li")
-        li.innerHTML =
+        let div = document.createElement("div")
+        div.innerHTML =
         `<h5>${juego.title}</h5>`
 
-        listaJuegos.append(li)
+        listaJuegos.append(div)
 })
 
 getGames ();
@@ -23,13 +23,13 @@ console.log(contenedorVideojuegos);
 
 const mostrarVideojuegos = (data) => {
     data.forEach(videojuego => {
-        const tarjeta = document.createElement('tarjeta')
-        tarjeta.innerHTML = `<h5>${videojuego.nombre}</h5>
+        const div = document.createElement('div')
+        div.innerHTML = `<h5>${videojuego.nombre}</h5>
                             <h5>${videojuego.categoria}</h5>
                             <h5>${videojuego.anio}</h5>
                             <h5>${videojuego.precio} euros</h5>
                             <button id = '${videojuego.id}' class ="comprar"> COMPRAR </button>`
-        contenedorVideojuegos.appendChild(tarjeta)
+        contenedorVideojuegos.appendChild(div)
     });
     const comprar = document.querySelectorAll('.comprar')
     comprar.forEach(el => {
