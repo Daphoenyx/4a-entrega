@@ -13,7 +13,7 @@ const videojuegos = [
         anio: 1997,
         precio: 5.69,
         categoria: 'aventura',
-        img: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co30yu.png'
+        img: ''
     },
     {
         id: 3,
@@ -38,13 +38,7 @@ const videojuegos = [
         precio: 19.50,
         categoria: 'RPG',
         img: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1t8h.png'
-    }
-
-];
-
-//const aventura = videojuegos.filter (videojuego => videojuego.categoria === 'aventura')
-
-videojuegos.push (
+    },
     {
         id: 6,
         nombre: 'Resident Evil 4',
@@ -53,8 +47,5 @@ videojuegos.push (
         categoria: 'aventura',
         img: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co6bo0.png'
     }
-)
 
-//let precios = videojuegos.map (function(nombrePrecio) {
-//    return `El juego ${nombrePrecio.nombre} cuesta ${nombrePrecio.precio} euros.`
-//})
+];

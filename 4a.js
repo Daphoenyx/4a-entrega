@@ -17,17 +17,6 @@ const getGames = async () => {
 
 getGames ();
 
-/*fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(response => response.json())
-    .then(response => {
-        response.forEach(juego => {
-            let li = document.createElement("li")
-            li.innerHTML =
-            <h5>${juego.title}</h5>
-
-            listaJuegos.append(li)
-        })
-    })*/
 
 const contenedorVideojuegos = document.querySelector('#contenedorVideojuegos');
 console.log(contenedorVideojuegos);
