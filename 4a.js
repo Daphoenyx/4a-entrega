@@ -10,7 +10,7 @@ const getGames = async () => {
     juegos.forEach(juego => {
         let li = document.createElement("li")
         li.innerHTML =
-        <h5>${juego.title}</h5>
+        `<h5>${juego.title}</h5>`
 
         listaJuegos.append(li)
 })
