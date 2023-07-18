@@ -5,7 +5,7 @@ const juegos = [
         anio: 2011,
         precio: 14.99,
         categoria: 'aventura',
-        img: 'The Elder Scrolls V Skyrim.png'
+        img: 'img/The Elder Scrolls V Skyrim.png'
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ const juegos = [
         anio: 1997,
         precio: 5.69,
         categoria: 'aventura',
-        img: 'The Curse of Monkey Island.png'
+        img: 'img/The Curse of Monkey Island.png'
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ const juegos = [
         anio: 1995,
         precio: 3.74,
         categoria: 'aventura',
-        img: 'Full Throttle.png'
+        img: 'img/Full Throttle.png'
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ const juegos = [
         anio: 1996,
         precio: 7.49,
         categoria: 'RPG',
-        img: 'Diablo.png'
+        img: 'img/Diablo.png'
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ const juegos = [
         anio: 2000,
         precio: 19.50,
         categoria: 'RPG',
-        img: 'Icewind Dale.png'
+        img: 'img/Icewind Dale.png'
     },
     {
         id: 6,
@@ -45,7 +45,7 @@ const juegos = [
         anio: 2023,
         precio: 59.99,
         categoria: 'aventura',
-        img: 'Resident Evil 4.png'
+        img: 'img/Resident Evil 4.png'
     }
 
 ];

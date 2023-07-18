@@ -1,12 +1,12 @@
 
 
 const mostrarJuegos = (juegos) => {
-    const contenedorJuegos = document.querySelector(".data");
-    contenedorProductos.innerHTML = "";
+    const contenedorJuegos = document.querySelector("#data");
+    contenedorJuegos.innerHTML = "";
     juegos.forEach((juego) => {
         const div = document.createElement ("div");
         div.innerHTML = `<h3>${juego.nombre}</h3>
-                        <img src = "${juego.img}" </img>
+                        <img src = "./${juego.img}" </>
                         <h5>${juego.categoria}</h5>
                         <h5>${juego.anio}</h5>
                         <h4>${juego.precio} euros</h4>
