@@ -2,7 +2,7 @@
 fetch("juegos.json")
 	.then((response) => response.json())
 	.then((juegos) => {
-		mostrarProductos(juegos);
+		mostrarJuegos(juegos);
 		mostrarCarrito();
 	});
 
@@ -111,3 +111,4 @@ const actualizarTot = (cont) => {
     const tot = carrito.reduce((acumular, juego) => acumular + juego.precio, 0)
     cont.textContent = `Total: ${tot} euros`
 }
+
