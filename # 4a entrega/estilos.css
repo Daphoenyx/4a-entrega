@@ -1,0 +1,96 @@
+
+
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+    max-width: 800px;
+	margin: 2em auto;
+	text-align: center;
+}
+
+.contenedorJuegos {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-auto-rows: 420px;
+	grid-gap: 2em;
+}
+
+.contenedorJuegos div {
+	border: 1px solid #ccc;
+	padding: 1em;
+}
+
+.contenedorJuegos img {
+	max-width: 100%;
+	height: 50%;
+}
+
+.contenedorJuegos h3 {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+.comprar,
+.remove,
+.closeModal {
+	display: block;
+	border: none;
+	cursor: pointer;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #333;
+	color: #fff;
+	padding: 1rem 0.8rem;
+	text-decoration: none;
+	transition: background-color 0.2s ease;
+}
+.remove {
+	margin-top: 0;
+	margin-bottom: auto;
+	margin-right: 0;
+}
+
+.comprar:hover,
+.remove:hover,
+.closeModal:hover {
+	background-color: #666;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(204, 204, 204, 0.5);
+}
+
+.productsCart li {
+	border-bottom: 1px solid #333;
+	padding: 1rem;
+	display: flex;
+	list-style: none;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.productContent {
+	padding-left: 1rem;
+}
+
+.productsCart img {
+	display: block;
+	width: 80px;
+	height: auto;
+	object-fit: contain;
+}
+
+.empty {
+	font-size: 2rem;
+	text-transform: uppercase;
+	text-align: center;
+}
