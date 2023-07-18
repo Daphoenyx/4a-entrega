@@ -20,14 +20,14 @@ const mostrarJuegos = (juegos) => {
     contenedorJuegos.appendChild(div);
     const boton = document.getElementById(`agregar-${juego.id}`)
     boton.addEventListener("click", () => {
-			agregarCart(juego.id);
+			agregarCart(juegos, juego.id);
                     })
     })
 }
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-const agregarCart = (id) => {
+const agregarCart = (juegos, id) => {
     if (!carrito.some((juego) => juego.id === id)) {
         const juego = juegos.find((juego) => juego.id === id)
         carrito.push({ ...juego, cantidad: 1})
@@ -39,7 +39,7 @@ const agregarCart = (id) => {
     mostrarCarrito()
 }
 
-mostrarJuegos(juegos);
+// mostrarJuegos(juegos);
 
 const mostrarCarrito = () => {
     const contCart = document.querySelector(".carrito")
@@ -79,7 +79,7 @@ const mostrarCarrito = () => {
 			})
         })
     } else {
-        contCart.innerHTML = '<div class = "vacio">El carrito está vacio.</div>'
+        contCart.innerHTML = '<div class = "vacio">El carrito está vacio</div>'
     }
 }
 
