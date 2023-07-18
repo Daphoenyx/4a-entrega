@@ -1,5 +1,5 @@
 
-fetch(".juegos.json")
+fetch("juegos.json")
 	.then((response) => response.json())
 	.then((juegos) => {
 		mostrarProductos(juegos);
