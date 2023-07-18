@@ -90,3 +90,18 @@ body {
 	text-transform: uppercase;
 	text-align: center;
 }
+
+.counter {
+	width: 120px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.counter .button {
+	width: 30px;
+}
+
+.button {
+	padding: 0.5rem;
+}

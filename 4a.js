@@ -10,7 +10,7 @@ const mostrarJuegos = (juegos) => {
                         <h5>${juego.categoria}</h5>
                         <h5>${juego.anio}</h5>
                         <h4>${juego.precio} euros</h4>
-                        <button id = 'agregar-${juego.id}' class ="comprar"> COMPRAR </button>`;
+                        <button id = 'agregar-${juego.id}' class ="comprar"> Agregar </button>`;
     contenedorJuegos.appendChild(div);
     const boton = document.getElementById(`agregar-${juego.id}`)
     boton.addEventListener("click", () => {
@@ -52,17 +52,48 @@ const mostrarCarrito = () => {
                             <h5>${juego.categoria}</h5>
                             <h5>${juego.anio}</h5>
                             <h4>${juego.precio} euros</h4>
-                            <button id = 'eliminar-${juego.id}' class ="eliminar"> COMPRAR </button>`;
+                            <div class="counter">
+				            <button id="decrementar-${juego.id}" class="button">-</button>
+				            <span class="product-price">${juego.cantidad}u.</span>
+				            <button id="incrementar-${juego.id}" class="button">+</button>
+				            </div>
+                            <button id = 'eliminar-${juego.id}' class ="eliminar"> Eliminar </button>`;
             juegosCart.appendChild(li)
             const boton = document.getElementById('eliminar-${juego.id}')
             boton.addEventListener("click", () => {
                 eliminarJuego(juego.id)
             })
+            const decrementar = document.getElementById(`decrementar-${juego.id}`);
+			decrementar.addEventListener("click", () => {
+				decrementarJuego(juego.id);
+			})
+            const incrementar = document.getElementById(`incrementar-${juego.id}`);
+			incrementar.addEventListener("click", () => {
+				incrementarJuego(juego.id);
+			})
         })
     } else {
         contCart.innerHTML = '<div class = "vacio">El carrito está vacio.</div>'
     }
 }
+
+const decrementarJuego = (id) => {
+	const juego = carrito.find((prod) => prod.id === id)
+	if (juego.cantidad === 1) {
+		eliminarJuego(juego.id)
+	} else {
+		juego.cantidad--
+		localStorage.setItem("carrito", JSON.stringify(carrito));
+		mostrarCarrito();
+	}
+}
+
+const incrementarJuego = (id) => {
+	const juego = carrito.find((prod) => prod.id === id);
+	juego.cantidad++;
+	localStorage.setItem("carrito", JSON.stringify(carrito));
+	mostrarCarrito();
+};
 
 const eliminarJuego = (id) => {
     carrito = carrito.filter((juego) => juego.id !== id)
