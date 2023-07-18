@@ -10,9 +10,9 @@ const mostrarJuegos = (juegos) => {
                         <h5>${juego.categoria}</h5>
                         <h5>${juego.anio}</h5>
                         <h4>${juego.precio} euros</h4>
-                        <button id = 'agregar ${juego.id}' class ="comprar"> COMPRAR </button>`;
+                        <button id = 'agregar-${juego.id}' class ="comprar"> COMPRAR </button>`;
     contenedorJuegos.appendChild(div);
-    const boton = document.getElementById(`${juego.id}`)
+    const boton = document.getElementById(`agregar-${juego.id}`)
     boton.addEventListener("click", () => {
 			agregarCart(juego.id);
                     })
@@ -23,8 +23,11 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const agregarCart = (id) => {
     if (!carrito.some((juego) => juego.id === id)) {
-        const juego = juego.find((juego) => juego.id === id)
-        carrito.push(juego)
+        const juego = juegos.find((juego) => juego.id === id)
+        carrito.push({ ...juego, cantidad: 1})
+    } else {
+        const juego = carrito.find((juego) => juego.id === id)
+        juego.cantidad++
     }
     localStorage.setItem("carrito", JSON.stringify(carrito))
     mostrarCarrito()
@@ -49,9 +52,9 @@ const mostrarCarrito = () => {
                             <h5>${juego.categoria}</h5>
                             <h5>${juego.anio}</h5>
                             <h4>${juego.precio} euros</h4>
-                            <button id = 'eliminar ${juego.id}' class ="eliminar"> COMPRAR </button>`;
+                            <button id = 'eliminar-${juego.id}' class ="eliminar"> COMPRAR </button>`;
             juegosCart.appendChild(li)
-            const boton = document.getElementById('eliminar ${juego.id}')
+            const boton = document.getElementById('eliminar-${juego.id}')
             boton.addEventListener("click", () => {
                 eliminarJuego(juego.id)
             })
