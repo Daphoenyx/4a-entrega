@@ -1,4 +1,10 @@
 
+fetch(".juegos.json")
+	.then((response) => response.json())
+	.then((juegos) => {
+		mostrarProductos(juegos);
+		mostrarCarrito();
+	});
 
 const mostrarJuegos = (juegos) => {
     const contenedorJuegos = document.querySelector("#data");

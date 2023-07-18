@@ -1,4 +1,4 @@
-const juegos = [
+[
     {
         id: 1,
         nombre: 'The Elder Scrolls V: Skyrim',
