@@ -13,7 +13,7 @@ const juegos = [
         anio: 1997,
         precio: 5.69,
         categoria: 'aventura',
-        img: ''
+        img: 'The Curse of Monkey Island.png'
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ const juegos = [
         anio: 1995,
         precio: 3.74,
         categoria: 'aventura',
-        img: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co30yp.png'
+        img: 'Full Throttle.png'
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ const juegos = [
         anio: 1996,
         precio: 7.49,
         categoria: 'RPG',
-        img: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co3ggo.png'
+        img: 'Diablo.png'
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ const juegos = [
         anio: 2000,
         precio: 19.50,
         categoria: 'RPG',
-        img: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1t8h.png'
+        img: 'Icewind Dale.png'
     },
     {
         id: 6,
@@ -45,7 +45,7 @@ const juegos = [
         anio: 2023,
         precio: 59.99,
         categoria: 'aventura',
-        img: 'https://images.igdb.com/igdb/image/upload/t_cover_big/co6bo0.png'
+        img: 'Resident Evil 4.png'
     }
 
 ];

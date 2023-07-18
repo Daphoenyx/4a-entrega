@@ -1,50 +1,32 @@
 
 
-let listaJuegos = document.getElementById("listaJuegos")
-
-const getGames = async () => { 
-    const response = await fetch ('https://jsonplaceholder.typicode.com/posts')
-    const data = await response.json()
-
-    let juegos = data.results
-    juegos.forEach(juego => {
-        let div = document.createElement("div")
-        div.innerHTML =
-        `<h5>${juego.title}</h5>`
-
-        listaJuegos.append(div)
-})
-
-getGames ();
-
-
-const contenedorVideojuegos = document.querySelector('#contenedorVideojuegos');
-console.log(contenedorVideojuegos);
-
-const mostrarVideojuegos = (data) => {
-    data.forEach(videojuego => {
-        const div = document.createElement('div')
-        div.innerHTML = `<h5>${videojuego.nombre}</h5>
-                            <h5>${videojuego.categoria}</h5>
-                            <h5>${videojuego.anio}</h5>
-                            <h5>${videojuego.precio} euros</h5>
-                            <button id = '${videojuego.id}' class ="comprar"> COMPRAR </button>`
-        contenedorVideojuegos.appendChild(div)
-    });
-    const comprar = document.querySelectorAll('.comprar')
-    comprar.forEach(el => {
-        el.addEventListener('click', (e) => {
-            agregar(e.target.id)
-        })
+const mostrarJuegos = (juegos) => {
+    const contenedorJuegos = document.querySelector(".data");
+    contenedorJuegos.innerHTML = "";
+    juegos.forEach((juego) => {
+        const div = document.createElement ("div");
+        div.innerHTML = `<h3>${juego.nombre}</h3>
+                        <img src = "${juego.img}" </img>
+                        <h5>${juego.categoria}</h5>
+                        <h5>${juego.anio}</h5>
+                        <h4>${juego.precio} euros</h4>
+                        <button id = '${juego.id}' class ="comprar"> COMPRAR </button>`;
+    contenedorJuegos.appendChild(div);
+    const boton = document.getElementById(`${juego.id}`);
+    boton.addEventListener("click", () => {
+			agregar(juego.id);
+                    })
     })
 }
 
-mostrarVideojuegos(videojuegos)
 
-localStorage.setItem("cart", JSON.stringify(cart));
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-function agregar (id) {
-    let encontrar = videojuegos.find (prod => prod.id === parseInt (id))
-    cart.push (encontrar)
-}}
+const agregar = (id) => {
+    if (!carrito.some((juego) => juego.id === id)) {
+        const juego = juego.find((juego) => juego.id === id)
+        carrito.push(juego)
+    }
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    mostrarCarrito()
+}
