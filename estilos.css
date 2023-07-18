@@ -35,7 +35,7 @@ body {
 }
 
 .comprar,
-.remove,
+.eliminar,
 .closeModal {
 	display: block;
 	border: none;
@@ -48,14 +48,14 @@ body {
 	text-decoration: none;
 	transition: background-color 0.2s ease;
 }
-.remove {
+.eliminar {
 	margin-top: 0;
 	margin-bottom: auto;
 	margin-right: 0;
 }
 
 .comprar:hover,
-.remove:hover,
+.eliminar:hover,
 .closeModal:hover {
 	background-color: #666;
 }
@@ -69,7 +69,7 @@ body {
 	background-color: rgba(204, 204, 204, 0.5);
 }
 
-.productsCart li {
+.juegosCart li {
 	border-bottom: 1px solid #333;
 	padding: 1rem;
 	display: flex;
@@ -78,18 +78,14 @@ body {
 	margin-right: auto;
 }
 
-.productContent {
-	padding-left: 1rem;
-}
-
-.productsCart img {
+.juegosCart img {
 	display: block;
 	width: 80px;
 	height: auto;
 	object-fit: contain;
 }
 
-.empty {
+.vacio {
 	font-size: 2rem;
 	text-transform: uppercase;
 	text-align: center;
