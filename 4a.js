@@ -2,7 +2,7 @@
 
 const mostrarJuegos = (juegos) => {
     const contenedorJuegos = document.querySelector(".data");
-    contenedorJuegos.innerHTML = "";
+    contenedorProductos.innerHTML = "";
     juegos.forEach((juego) => {
         const div = document.createElement ("div");
         div.innerHTML = `<h3>${juego.nombre}</h3>
@@ -19,7 +19,6 @@ const mostrarJuegos = (juegos) => {
     })
 }
 
-
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const agregar = (id) => {
@@ -30,3 +29,5 @@ const agregar = (id) => {
     localStorage.setItem("carrito", JSON.stringify(carrito))
     mostrarCarrito()
 }
+
+mostrarJuegos(juegos);
