@@ -109,7 +109,7 @@ const eliminarJuego = (id) => {
 }
 
 const actualizarTot = (cont) => {
-    const tot = carrito.reduce((acumular, juego) => acumular + juego.precio, 0)
+    const tot = carrito.reduce((acumular, juego) => acumular + juego.precio * juego.cantidad, 0)
     cont.textContent = `Total: ${tot} euros`
 }
 
