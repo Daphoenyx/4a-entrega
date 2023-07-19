@@ -43,8 +43,9 @@ const agregarCart = (juegos, id) => {
 
 const mostrarCarrito = () => {
     const contCart = document.querySelector(".carrito")
+    console.log(contCart)
     contCart.innerHTML = ""
-    if (carrito.lenght>0) {
+    if (carrito.length>0) {
         const juegosCart = document.createElement("ul")
         juegosCart.classList.add("juegosCart")
         contCart.appendChild(juegosCart)
@@ -65,7 +66,7 @@ const mostrarCarrito = () => {
 				            </div>
                             <button id = 'eliminar-${juego.id}' class ="eliminar"> Eliminar </button>`;
             juegosCart.appendChild(li)
-            const boton = document.getElementById('eliminar-${juego.id}')
+            const boton = document.getElementById(`eliminar-${juego.id}`)
             boton.addEventListener("click", () => {
                 eliminarJuego(juego.id)
             })
